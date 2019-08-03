@@ -1,6 +1,6 @@
 var config = {
   type: Phaser.AUTO,
-  width: 800,
+  width: 900,
   height: 600,
   physics:{
     default: 'arcade',
@@ -17,16 +17,16 @@ var config = {
 };
 
 var player ;
-var stars;
 var platforms;
 var cursors;
+var star;
 var game = new Phaser.Game(config);
 
 function preload() {
- this.load.image('sky','assets/sky.pngs');
- this.load.image('ground','assets/platform.png');
- this.load.image('star','assets/star.png');
- this.load.image('bomb', 'assets/bomb.png');
+ this.load.image('sky','assets/cielo.png');
+this.load.image('ground','assets/platform.png');
+this.load.image('star','assets/star.png');
+this.load.image('bomb','assets/bomb.png');
  this.load.spritesheet(
   'dude',
   'assets/dude.png',
@@ -37,7 +37,6 @@ function preload() {
  function create() {
  this.add.image(400,300, 'sky');
 
-
   //this will create all platforms in the game
   setPlatforms(this);
 
@@ -46,6 +45,7 @@ function preload() {
 
 //this will create all animations left, turn. right
   createAnimations(this);
+
 
 
  cursors= this.input.keyboard.createCursorKeys();
@@ -121,6 +121,6 @@ function createAnimations(self) {
   });
 }
 
-function collectStar(plyer, star){
+function collectStar(player, star){
 star.disableBody(true,true)
 }
