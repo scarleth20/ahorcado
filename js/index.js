@@ -23,11 +23,11 @@ var star;
 var game = new Phaser.Game(config);
 
 function preload() {
- this.load.image('sky','assets/cielo.png');
-this.load.image('ground','assets/platform.png');
-this.load.image('star','assets/star.png');
-this.load.image('bomb','assets/bomb.png');
- this.load.spritesheet(
+  this.load.image('sky','assets/cielo.png');
+  this.load.image('ground','assets/platform.png');
+  this.load.image('star','assets/star.png');
+  this.load.image('bomb','assets/bomb.png');
+  this.load.spritesheet(
   'dude',
   'assets/dude.png',
   {frameWidth: 32, frameHeight: 48}
@@ -35,7 +35,9 @@ this.load.image('bomb','assets/bomb.png');
 }
 
  function create() {
- this.add.image(400,300, 'sky');
+   const background = this.add.image(450, 300, 'sky');
+   background.displayWidth = game.config.width;
+   background.displayHeight = game.config.height;
 
   //this will create all platforms in the game
   setPlatforms(this);
@@ -53,7 +55,7 @@ this.load.image('bomb','assets/bomb.png');
  stars = this.physics.add.group({
    key: 'star',
    repeat: 11,
-   setXY: {x:12, y: 0, stepX: 70}
+   setXY: {x: 12, y: 0, stepX: 70}
  })
 
  stars.children.iterate(function (child){
