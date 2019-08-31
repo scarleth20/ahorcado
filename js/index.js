@@ -24,9 +24,14 @@ function create() {
   // Create graphics
   const graphics = this.add.graphics();
 
+  // Create
+  cuadrados(this, graphics);
+
   // Build rectangles
   buildRectangles(this, graphics);
 }
+// rectangles
+// const digitado = this.add.rectangles();
 
 function buildRectangles(self, graphics) {
   characters.forEach((character) => {
@@ -37,4 +42,39 @@ function buildRectangles(self, graphics) {
 
     self.add.text(character.textX, character.textY, character.word, { color: '#000000', fontFamily: 'Arial', fontSize: 20, });
   });
+}
+
+function cuadrados(self, graphics) {
+  graphics.fillRect(100, 100, 40, 40);
+  graphics.strokeRect(100, 100, 40, 40);
+
+  graphics.fillRect(150, 100, 40, 40);
+  graphics.strokeRect(150, 100, 40, 40);
+
+  graphics.fillRect(200, 100, 40, 40);
+  graphics.strokeRect(200, 100, 40, 40);
+
+  graphics.fillRect(250, 100, 40, 40);
+  graphics.strokeRect(250, 100, 40, 40);
+
+  graphics.fillRect(300, 100, 40, 40);
+  graphics.strokeRect(300, 100, 40, 40);
+
+  graphics.fillRect(350, 100, 40, 40);
+  graphics.strokeRect(350, 100, 40, 40);
+
+  graphics.fillRect(350, 100, 40, 40);
+  graphics.strokeRect(350, 100, 40, 40);
+
+  graphics.fillRect(400, 100, 40, 40);
+  graphics.strokeRect(400, 100, 40, 40);
+
+  graphics.fillRect(450, 100, 40, 40);
+  graphics.strokeRect(450, 100, 40, 40);
+
+  graphics.fillRect(500, 100, 40, 40);
+  graphics.strokeRect(500, 100, 40, 40);
+
+  graphics.fillRect(550, 100, 40, 40);
+  graphics.strokeRect(550, 100, 40, 40);
 }
