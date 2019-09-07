@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/scarleth20/ahorcado#readme",
   "dependencies": {
+    "an-array-of-spanish-words": "^1.0.1",
     "phaser": "^3.19.0"
   }
 }
