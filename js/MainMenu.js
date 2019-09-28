@@ -4,16 +4,11 @@ class MainMenu extends Phaser.Scene {
   }
 
   preload() {
-      this.load.image('sky', 'assets/play.png');
+      this.load.image('background', 'assets/mainmenu/background.png');
   }
 
   create() {
-    const background = this.add.image(500, 315, 'sky');
-    background.displayWidth = this.game.config.width;
-    background.displayHeight = this.game.config.height;
-
-    const play= this.add.image(400,530,'play');
-    play.setInteractive();
-    play.once('pointerup', () => this.scene.start('levels'), this);
+    const background = this.add.image(500, 315, 'background').setInteractive();
+    background.once('pointerup', () => this.scene.start('game'), this);
   }
 }

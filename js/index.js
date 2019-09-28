@@ -1,9 +1,10 @@
 const config = {
-  type: Phaser.AUTO,
-  parent: 'container',
-  width: 1000,
+  backgroundColor: '#FFF',
   height: 630,
-  scene: [MainMenu, Game]
+  parent: 'container',
+  scene: [MainMenu, Game],
+  type: Phaser.AUTO,
+  width: 1000
 };
 
 new Phaser.Game(config);

@@ -11,8 +11,8 @@ class Game extends Phaser.Scene {
   create() {
     // Create background image
     const background = this.add.image(500, 315, 'sky');
-    background.displayWidth = game.config.width;
-    background.displayHeight = game.config.height;
+    background.displayWidth = this.game.config.width;
+    background.displayHeight = this.game.config.height;
 
     // Create graphics
     const graphics = this.add.graphics();
@@ -25,5 +25,14 @@ class Game extends Phaser.Scene {
     console.log(randomWord);
   }
 
+  buildRectangles = (graphics) => {
+    characters.forEach((character) => {
+      graphics.lineStyle(2, 0xFF00FF, 1.0);
+      graphics.fillStyle(0xFFFFFF, 1.0);
+      graphics.fillRect(character.rectX, character.rectY, 40, 40);
+      graphics.strokeRect(character.rectX, character.rectY, 40, 40);
+
+      this.add.text(character.textX, character.textY, character.word, { color: '#000000', fontFamily: 'Arial', fontSize: 20 });
+    });
   }
 }
