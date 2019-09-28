@@ -1,6 +1,8 @@
 class Game extends Phaser.Scene {
   constructor() {
     super({ key: 'game' });
+
+    window.GAME = this;
   }
 
   preload() {
@@ -25,14 +27,14 @@ class Game extends Phaser.Scene {
     console.log(randomWord);
   }
 
-  buildRectangles = (graphics) => {
-    characters.forEach((character) => {
+  buildRectangles(graphics) {
+    characters.forEach(function(character) {
       graphics.lineStyle(2, 0xFF00FF, 1.0);
       graphics.fillStyle(0xFFFFFF, 1.0);
       graphics.fillRect(character.rectX, character.rectY, 40, 40);
       graphics.strokeRect(character.rectX, character.rectY, 40, 40);
 
-      this.add.text(character.textX, character.textY, character.word, { color: '#000000', fontFamily: 'Arial', fontSize: 20 });
+      window.GAME.add.text(character.textX, character.textY, character.word, { color: '#000000', fontFamily: 'Arial', fontSize: 20 });
     });
   }
 }
