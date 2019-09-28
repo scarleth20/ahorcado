@@ -4,15 +4,15 @@ class Game extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('sky', 'assets/sky.png');
+    this.load.image('sky', 'assets/game/sky.png');
     this.load.json('words', 'node_modules/an-array-of-spanish-words/palabras.json');
   }
 
   create() {
     // Create background image
-    const background = this.add.image(500, 315, 'sky');
-    background.displayWidth = this.game.config.width;
-    background.displayHeight = this.game.config.height;
+    const sky = this.add.image(500, 315, 'sky');
+    sky.displayWidth = this.game.config.width;
+    sky.displayHeight = this.game.config.height;
 
     // Create graphics
     const graphics = this.add.graphics();
