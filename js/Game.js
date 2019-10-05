@@ -5,21 +5,29 @@ class Game extends Phaser.Scene {
     window.GAME = this;
   }
 
-  preload() {
+ preload() {
     this.load.image('sky', 'assets/game/sky.png');
     this.load.json('words', 'node_modules/an-array-of-spanish-words/palabras.json');
+
+    this.load.image('head', 'assets/toy/head.png');
+
+    this.load.image('body', 'assets/toy/body.png');
   }
 
-  create() {
+create() {
     // Create background image
     const sky = this.add.image(500, 315, 'sky');
     sky.displayWidth = this.game.config.width;
     sky.displayHeight = this.game.config.height;
 
-    // Create graphics
-    const graphics = this.add.graphics();
+    const head = this.add.image(450, 250, 'head');
 
-    // Build rectangles
+    const body = this.add.image(450, 350, 'body');
+
+  // Create graphics
+     const graphics = this.add.graphics();
+
+  // Build rectangles
     this.buildRectangles( graphics);
 
     const words = this.cache.json.get('words');
@@ -35,6 +43,7 @@ class Game extends Phaser.Scene {
       graphics.strokeRect(character.rectX, character.rectY, 40, 40);
 
       window.GAME.add.text(character.textX, character.textY, character.word, { color: '#000000', fontFamily: 'Arial', fontSize: 20 });
+
     });
   }
 }
