@@ -12,6 +12,7 @@ class Game extends Phaser.Scene {
     this.load.image('head', 'assets/toy/head.png');
 
     this.load.image('body', 'assets/toy/body.png');
+
   }
 
 create() {
