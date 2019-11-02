@@ -61,9 +61,12 @@ create() {
       graphics.fillStyle(0xFFFFFF, 1.0);
       graphics.fillRect(character.rectX, character.rectY, 40, 40);
       graphics.strokeRect(character.rectX, character.rectY,40 , 40);
+<<<<<<< HEAD
 
      graphics.fillRect('character.rectX:180, character.rectY:160');
     graphics.strokeRect('character.rectX:170, character.rectY:190');
+=======
+>>>>>>> 174c7f75140b55403ea51ea2e2598a01e8b62c3d
 
       window.GAME.add.text(character.textX, character.textY, character.word, { color: '#000000', fontFamily: 'Arial', fontSize: 20 });
 
