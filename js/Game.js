@@ -46,9 +46,9 @@ create() {
 
  // Create graphics
      const graphics = this.add.graphics();
-
   // Build rectangles
     this.buildRectangles( graphics);
+
 
     const words = this.cache.json.get('words');
     const randomWord = words[Math.floor(Math.random() * words.length)];
@@ -60,7 +60,10 @@ create() {
       graphics.lineStyle(2, 0xFF00FF, 1.0);
       graphics.fillStyle(0xFFFFFF, 1.0);
       graphics.fillRect(character.rectX, character.rectY, 40, 40);
-      graphics.strokeRect(character.rectX, character.rectY, 40, 40);
+      graphics.strokeRect(character.rectX, character.rectY,40 , 40);
+
+     graphics.fillRect('character.rectX:180, character.rectY:160');
+    graphics.strokeRect('character.rectX:170, character.rectY:190');
 
       window.GAME.add.text(character.textX, character.textY, character.word, { color: '#000000', fontFamily: 'Arial', fontSize: 20 });
 
