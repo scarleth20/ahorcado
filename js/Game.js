@@ -65,7 +65,12 @@ create() {
       graphics.strokeRect('character.rectX:170, character.rectY:190');
 
 
-      window.GAME.add.text(character.textX, character.textY, character.word, { color: '#000000', fontFamily: 'Arial', fontSize: 20 });
+var hellen = 1;
+    graphics.fillStyle('0xFFFFFF');
+    graphics.fillRect('rectX:180,rectY:160');
+
+    window.GAME.add.text(character.textX, character.textY, character.word, { color: '#000000', fontFamily: 'Arial', fontSize: 20 });
 
     });
   }
+}
